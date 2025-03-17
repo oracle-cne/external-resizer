@@ -6,8 +6,9 @@
 
 %global app_name                external-resizer
 %global app_version             1.13.2
-%global oracle_release_version  1
+%global oracle_release_version  2
 %global _buildhost              build-ol%{?oraclelinux}-%{?_arch}.oracle.com
+%global image_name	            csi-resizer
 
 Name:           %{app_name}-container-image
 Version:        %{app_version}
@@ -26,7 +27,7 @@ Sidecar container that watches the Kubernetes API server for PersistentVolumeCla
 
 %build
 %global rpm_name %{app_name}-%{version}-%{release}.%{_build_arch}
-%global docker_image container-registry.oracle.com/olcne/%{app_name}:v%{version}
+%global docker_image container-registry.oracle.com/olcne/%{image_name}:v%{version}
 
 yum clean all
 yumdownloader --destdir=${PWD}/rpms %{rpm_name}
@@ -43,5 +44,8 @@ podman save -o %{app_name}.tar %{docker_image}
 /usr/local/share/olcne/%{app_name}.tar
 
 %changelog
+* Mon Mar 17 2025 Michael Gianatassio <michael.gianatassio@oracle.com> - 1.13.2-2
+- Rename the container image to be csi-resizer.
+
 * Wed Mar 12 2025 Michael Gianatassio <michael.gianatassio@oracle.com> - 1.13.2-1
 - Added Oracle specific build files for CSI external-resizer.
