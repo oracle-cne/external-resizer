@@ -8,6 +8,7 @@
 %global app_version             1.13.2
 %global oracle_release_version  2
 %global _buildhost              build-ol%{?oraclelinux}-%{?_arch}.oracle.com
+%global image_name	            csi-resizer
 
 Name:           %{app_name}-container-image
 Version:        %{app_version}
@@ -26,7 +27,7 @@ Sidecar container that watches the Kubernetes API server for PersistentVolumeCla
 
 %build
 %global rpm_name %{app_name}-%{version}-%{release}.%{_build_arch}
-%global docker_image container-registry.oracle.com/olcne/%{app_name}:v%{version}
+%global docker_image container-registry.oracle.com/olcne/%{image_name}:v%{version}
 
 yum clean all
 yumdownloader --destdir=${PWD}/rpms %{rpm_name}
