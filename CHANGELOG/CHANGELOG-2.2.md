@@ -1,3 +1,25 @@
+## Release notes for 2.2.1
+
+[Documentation](https://kubernetes-csi.github.io)
+
+# Changelog since 2.2.0
+
+## Changes by Kind
+
+### Other (Cleanup or Flake)
+
+- Update golang.org/x/crypto to latest version - v0.53.0 (#589, @chethanv28)
+
+## Dependencies
+
+### Changed
+- golang.org/x/crypto: v0.47.0 → v0.53.0
+- golang.org/x/net: v0.49.0 → v0.55.0
+- golang.org/x/sync: v0.19.0 → v0.21.0
+- golang.org/x/sys: v0.40.0 → v0.46.0
+- golang.org/x/term: v0.39.0 → v0.44.0
+- golang.org/x/text: v0.33.0 → v0.38.0
+
 ## Release notes for 2.2.0
 
 [Documentation](https://kubernetes-csi.github.io)
